@@ -1,0 +1,95 @@
+/* Clean White Luxury Theme */
+body {
+    font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+    background-color: #ffffff;
+    color: #212529;
+    overflow-x: hidden;
+}
+
+/* Real Transparent Glassmorphism Navbar */
+.glass-navbar {
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    border-radius: 60px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.4s ease;
+}
+
+/* Navbar text ko white kar do taaki transparent background par saaf dikhe */
+.glass-navbar .nav-link {
+    color: #ffffff !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.glass-navbar .nav-link:hover, 
+.glass-navbar .nav-link.active {
+    
+    color: #ffc107 !important;
+}
+
+.glass-navbar .navbar-brand {
+    color: #ffffff !important;
+}
+
+
+/* Nav Links Color */
+.nav-link {
+    color: #212529 !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #f7f30c !important;
+}
+
+/* Luxury Badge */
+.luxury-badge {
+    background: rgba(13, 110, 253, 0.08);
+    border: 1px solid rgba(13, 110, 253, 0.2);
+    color: #f7f30c;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    padding: 6px 16px;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+/* Primary Dark Button */
+.btn-dark-custom {
+    background: #111111;
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-dark-custom:hover {
+    background: #000000;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+}
+
+/* Cards Hover Animation */
+.hover-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.06) !important;
+    transition: all 0.4s ease;
+}
+
+.hover-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12) !important;
+}
+/* Smooth Image Zoom Effect on Hover */
+.hover-zoom {
+    transition: transform 0.5s ease;
+}
+.hover-zoom:hover {
+    transform: scale(1.05);
+}
