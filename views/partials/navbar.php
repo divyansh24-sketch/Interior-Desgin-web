@@ -3,7 +3,7 @@
 if (session_status() === PHP_SESSION_NONE) {
     
 }
-?>s
+?>
 <nav class="navbar navbar-expand-lg fixed-top my-3 mx-auto px-4 glass-navbar" data-aos="fade-down" data-aos-duration="1000">
     <div class="container-fluid">
         <!-- Brand / Logo -->
@@ -21,16 +21,16 @@ if (session_status() === PHP_SESSION_NONE) {
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav align-items-center gap-4 py-3 py-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">Home</a>
+                    <a class="nav-link" href="/index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about.php">About</a>
+                    <a class="nav-link" href="/views/about.php">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="services.php">Services</a>
+                    <a class="nav-link" href="/views/services.php">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.php">Connect</a>
+                    <a class="nav-link" href="/views/contact.php">Connect</a>
                 </li>
             </ul>
 

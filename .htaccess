@@ -1,5 +1,16 @@
 RewriteEngine On
 
-# Redirect Trailing Slashes If Not A Folder...
+# Agar koi /about ya /about.php khole toh views/about.php khul jaye
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)/$ /$1 [L,R=301]
+RewriteRule ^about(\.php)?$ views/about.php [L]
+
+# Contact page ke liye
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^contact(\.php)?$ views/contact.php [L]
+
+# Services page ke liye
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^services(\.php)?$ views/services.php [L]
