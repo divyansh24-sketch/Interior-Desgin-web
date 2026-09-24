@@ -15,11 +15,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     try {
+        // Step 1: Pehle check karo aur table apne aap bana lo agar nahi hai toh
+        $pdo->exec("CREATE TABLE IF NOT EXISTS consultations (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            design_name VARCHAR(255) NOT NULL,
+            user_name VARCHAR(255) NOT NULL,
+            user_email VARCHAR(255) NOT NULL,
+            user_phone VARCHAR(50) NOT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )");
+
+        // Step 2: Ab data insert karo
         $sql = "INSERT INTO consultations (design_name, user_name, user_email, user_phone) VALUES (?, ?, ?, ?)";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$design_name, $user_name, $user_email, $user_phone]);
 
-        // **Yahan user ka naam session mein save kar liya**
         $_SESSION['user_name'] = $user_name;
 
         echo "<script>
@@ -27,7 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             window.location.href = 'views/about.php';
         </script>";
     } catch (\PDOException $e) {
-        echo "<script>alert('Error submitting request. Please try again.'); window.history.back();</script>";
+        // Agar fir bhi koi error ho toh screen par exact error dikhaye
+        echo "<script>alert('Database Error: " . addslashes($e->getMessage()) . "'); window.history.back();</script>";
     }
 } else {
     header("Location: index.php");
