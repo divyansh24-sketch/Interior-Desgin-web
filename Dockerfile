@@ -1,4 +1,10 @@
 FROM php:8.1-apache
-RUN docker-php-ext-install pdo pdo_mysql
+
+# Apache mod_rewrite enable karne ke liye
+RUN a2enmod rewrite
+
+# Code ko server par copy karna
 COPY . /var/www/html/
-EXPOSE 80
+
+# Permissions set karna
+RUN chown -R www-data:www-data /var/www/html
